@@ -1,0 +1,14 @@
+{% comment %} 
+Template for user profile page (in progress)
+{% endcomment %}
+
+<form method="post" enctype="multipart/form-data">  
+  {% csrf_token %}  
+  {{ form.as_p }}  
+  <button type="submit">Update Profile</button>  
+</form>  
+
+{% if user.profile_picture  %}  
+  <h3>Succesfully uploaded</h3>  
+  <img src="{{ user.profile_picture.url}}" alt="connect" style="max-height:300px">  
+{% endif %}  

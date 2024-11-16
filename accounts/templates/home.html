@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} TaskRabbit{% endblock %}</title>
+</head>
+
+<body>
+  <main>
+    {% if user.is_authenticated %}
+      Welcome to {{ user.username }} to TaskRabbit
+
+  </br>
+    <a href="/accounts/logout">logout</a>
+    {% else %}
+    <a href="/accounts/signup">signup</a>
+    <a href="/accounts/login">login</a>
+    {% endif %}
+  </main>
+</body>
+
+</html>
